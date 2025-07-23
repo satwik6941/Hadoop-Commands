@@ -1,0 +1,33 @@
+HADOOP COMMANDS
+
+------------------------------------------------------------------------------
+How to start Hadoop (For Ubuntu):
+ - export PDSH_RCMD_TYPE = ssh
+ - start-all.sh (starts all the nodes)
+ - If there is a problem with the namenode or anything is not working, we have to format the namenode using the command:
+   - hadoop-3.4.0/bin/hdfs namenode -format (replace the version with your Hadoop version)
+ - stop-all.sh (stops all the nodes)
+ ------------------------------------------------------------------------------
+
+1. hadoop fs -mkdir /<name of folder>
+    - Creates a new directory in HDFS.
+2. jps 
+    - Shows all the nodes running in the Hadoop cluster. THis can he used to check if the NameNode, DataNode, ResourceManager, and NodeManager are running.
+3. hdfs dfs -ls /
+    - Shows all the directories under the root directory in HDFS.
+4. hdfs dfs -ls -R /
+    This shows all the directories and files under each directory in the root directory.
+
+NOTE: If we have the admin rights, then only we can read, write and execute the files in HDFS. If we do not have the admin rights, then we can only read the files.
+
+5. hdfs dfs -cat (path of the file)
+    - Displays the content of the file in path. If the path is of a folder, then it says "THis is a directory" and does not display anything since it is not a file.
+
+6. hdfs dfs -du /
+   hdfs dfs -df /
+    - These both commands can help in seeing the disk usage of the HDFS.
+
+7. hadoop fs -expunge
+    - This command empties the trash by deleting all the files that are in the trash.
+
+8. 
